@@ -5,53 +5,8 @@
       return this.addBack.apply(this, arguments);
     }
 
-    /* Loader Code Start */
-       $(window).on("load", function() { 
-        $(".section-loader").fadeOut("slow");
-
-        });
 
 
-    /* Loader Code End */
-
-    /*
-    |====================
-    | Mobile NAv trigger
-    |=====================
-    */
-
-    /*
-    |=================
-    | Onepage Nav
-    |================
-    */
-        
-      $('#zb-header').onePageNav({
-          currentClass: 'active', 
-          changeHash: false,
-          scrollSpeed: 750,
-          scrollThreshold: 0.5,
-      });
-
-
-    $(window).on('scroll', function() {
-        var scroll = $(window).scrollTop();
-        if (scroll >= 50) {
-            $(".nav-scroll").addClass("nav-strict");
-        } else {
-            $(".nav-scroll").removeClass("nav-strict");
-        }
-    });
-
-    $(window).on('scroll', function() {
-        var scroll = $(window).scrollTop();
-        if (scroll >= 50) {
-            $(".nav-scroll").addClass("nav-strict");
-        } else {
-            $(".nav-scroll").removeClass("nav-strict");
-        }
-    });
- 
 
     /*
     |=============================
@@ -116,121 +71,70 @@
     $(".advice_slider .owl-prev").addClass("op_1");
   });    
 
-
-  $('#advice_section').owlCarousel({
-    loop: true,
-    responsiveClass: true,
-    nav: false,
-    // navText: ["<i class='fa fa-long-arrow-left' ></i>", "<i class='fa fa-long-arrow-right' ></i>"],
-    autoplay: true,
-    smartSpeed: 2500,
-    margin: 20,
-    autoWidth: true,
-    stopOnHover : true,
-    autoplay: true,
-    autoplayTimeout:100,
-    stagePadding: 100,
-    autoplayHoverPause: true,
-    responsive: {
-    0: {
-        items: 1,
-    },
-    768: {
-        items: 2,
-    },
-    1170: {
-        items: 3,
-    }
-    }
-
-  }); 
                            
 
- 
-        	/*
-	* We need to turn it into a function.
-	* To apply the changes both on document ready and when we resize the browser.
-	*/
-	
-    function mediaSize() { 
-        /* Set the matchMedia */
-        if (window.matchMedia('(min-width: 768px)').matches) {
-        /* Changes when we reach the min-width  */
-          //parallax
-          var image = document.getElementsByClassName('ione');
-          new simpleParallax(image, {
-            overflow: true,
-            scale: 1.3,
-            breakpoints: 420,
-          });
-          
-          var image = document.getElementsByClassName('itwo');
-          new simpleParallax(image, {
-            overflow: true,
-            scale: 1.2,
-            orientation: 'right',
-            breakpoints: 420,
-          });
-  
-          var image = document.getElementsByClassName('ithree');
-          new simpleParallax(image, {
-            overflow: true,
-            scale: 1.4,
-            breakpoints: 420,
-          });
-          var image4 = document.getElementsByClassName('ifour');
-          new simpleParallax(image4, {
-            overflow: true,
-            scale: 5.5,
-            orientation: 'left',
-            delay: .7,
-            transition: 'cubic-bezier(0,0,0,100)',
-            breakpoints: 420,
-            
-          });
-  
-        } else {
-  
-          var image = document.getElementsByClassName('ione');
-          new simpleParallax(image, {
-            overflow: true,
-            scale: 1.0,
-            breakpoints: 420,
-          });
-          
-          var image = document.getElementsByClassName('itwo');
-          new simpleParallax(image, {
-            overflow: true,
-            scale: 1.0,
-            orientation: 'none',
-            breakpoints: 420,
-          });
-  
-          var image = document.getElementsByClassName('ithree');
-          new simpleParallax(image, {
-            overflow: true,
-            scale: 1.0,
-            breakpoints: 420,
-          });
-
-          var image4 = document.getElementsByClassName('ifour');
-          new simpleParallax(image4, {
-            overflow: true,
-            scale: 1.0,
-            orientation: 'left',
-            // delay: .7,
-            breakpoints: 420,
-            // transition: 'cubic-bezier(0,0,0,100)',
-            
-          });
-  
-        }
+  var $jscomp = $jscomp || {};
+  $jscomp.scope = {};
+  $jscomp.createTemplateTagFirstArg = function(a) {
+      return a.raw = a
+  };
+  $jscomp.createTemplateTagFirstArgWithRaw = function(a, b) {
+      a.raw = b;
+      return a
+  };
+  var handleMousePos = function(a) {
+      var b = document.querySelector("#mouse-cursor"),
+          d = document.querySelectorAll(".cursor-hover"),
+          e = a.pageX;
+      a = a.pageY;
+      var f = function() {
+          b.style.transform = "scale(4)";
+          b.style.background = "#FF1744"
       };
-      
-      /* Call the function */
-      mediaSize();
-      /* Attach the function to the resize event listener */
-      // window.addEventListener('resize', mediaSize, false);  
+      d.forEach(function(c) {
+          return c.addEventListener("mouseenter", f)
+      });
+      var g = function() {
+          b.style.transform = "";
+          b.style.background = ""
+      };
+      d.forEach(function(c) {
+          return c.addEventListener("mouseleave", g)
+      });
+      return b.style.left = e - 10 + "px", b.style.top = a - 10 + "px"
+  };
+  document.addEventListener("mousemove", handleMousePos);
+  
+  
+  document.getElementsByTagName("body")[0].addEventListener("mousemove", function(b) {
+      t.style.left = b.clientX + "px";
+      t.style.top = b.clientY + "px";
+      e.style.left = b.clientX + "px";
+      e.style.top = b.clientY + "px";
+      i.style.left = b.clientX + "px";
+      i.style.top = b.clientY + "px"
+  });
+  var t = document.getElementById("cursor"),
+      e = document.getElementById("cursor2"),
+      i = document.getElementById("cursor3");
+  
+  function n(b) {
+      e.classList.add("hover", "hover-2");
+      i.classList.add("hover", "hover-2")
+  }
+  
+  function s(b) {
+      e.classList.remove("hover", "hover-2");
+      i.classList.remove("hover", "hover-2")
+  }
+  s();
+  for (var r = document.querySelectorAll(".hover-target, .hover-target-2"), a = r.length - 1; 0 <= a; a--) o(r[a]);
+  
+  function o(b) {
+      b.addEventListener("mouseover", n);
+      b.addEventListener("mouseout", s)
+  }
+  
 
 
 }(jQuery));
