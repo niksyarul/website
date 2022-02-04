@@ -468,22 +468,16 @@ document.body.appendChild(el);
   });
       </script>
     <script>
-        const modals = document.querySelectorAll("modalclick");
+       $('.modalclick').click(function(){
+    var buttonId = $(this).attr('id');
+    $('#modal-container').removeAttr('class').addClass(buttonId);
+    $('body').addClass('modal-active');
+    })
 
-modals.forEach(function (trigger) {
-  trigger.addEventListener("click", function (event) {
-    event.preventDefault();
-    const modal = document.getElementById(trigger.dataset.modal);
-    modal.classList.add("modal-active");
-    const exits = modal.querySelectorAll("#modal-container");
-    exits.forEach(function (exit) {
-      exit.addEventListener("click", function (event) {
-        event.preventDefault();
-        modal.classList.remove("modal-active");
-      });
+    $('#modal-container').click(function(){
+    $(this).addClass('out');
+    $('body').removeClass('modal-active');
     });
-  });
-});
     </script>
   </body>
 </html>
