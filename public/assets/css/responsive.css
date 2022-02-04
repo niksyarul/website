@@ -24,6 +24,9 @@
 =========================================
 */
 @media only screen and (max-width: 1200px) {
+  .dots{
+    display: none;
+  }
   .btn-project {
     margin-left: auto;
     margin-bottom: 35px;
@@ -44,6 +47,7 @@
   .resume-home .shape-image {
     display: none;
   }
+  
 }
 
 /*
@@ -57,6 +61,12 @@
 =========================================
 */
 @media only screen and (max-width: 991px) {
+  .contact-section{
+    height: 40%;
+  }
+  
+  
+
   .section-separator {
     padding: 40px 0;
   }

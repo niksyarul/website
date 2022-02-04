@@ -103,7 +103,7 @@
       });
       return b.style.left = e - 10 + "px", b.style.top = a - 10 + "px"
   };
-  document.addEventListener("mousemove", handleMousePos);
+  document.addEventListener("mousemove", handleMousePos, {passive: true});
   
   
   document.getElementsByTagName("body")[0].addEventListener("mousemove", function(b) {
