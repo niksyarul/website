@@ -675,7 +675,7 @@ p {
   font-size: 130px;
   line-height: 0.87;
   letter-spacing: -6.47px;
-  color: #e0e0e0;
+  color: rgb(136, 207, 255);
 }
 
 /*
@@ -2073,6 +2073,11 @@ canvas{
   position:relative;
   top:0;
   left:0;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 .modal p {
@@ -2330,7 +2335,7 @@ canvas{
 }
 
 .contact-section{
-  background-color: #F3F3F3; 
+  background-color: #fff; 
   height: 25%; 
   margin-top: 0;
 }

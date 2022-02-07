@@ -399,7 +399,7 @@
             </div>
 	</div>
     <div class="section" id="section2">
-		<canvas>No canvas, no ball.</canvas>
+		<canvas  id="myCanvas"></canvas>
         <div  class="contact-section d-flex align-items-center">
           <div class="container ">
             <div class="row d-flex align-items-center">
@@ -445,7 +445,8 @@
     <script src="assets/js/fullpage.js"></script>
     <script src="assets/js/custom-scripts.js" defer></script>   
     <script src="assets/js/cursor.js" defer></script>
-    <script src="assets/js/ball.js"></script>
+    <script src="assets/js/alphabet.js"></script>
+    <script src="assets/js/bubbles.js"></script>
     <script type="module">
         import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
 
@@ -494,5 +495,24 @@ document.body.appendChild(el);
     $('body').removeClass('modal-active');
     });
     </script>
+    <script >
+        var red = [0, 100, 63];
+        var orange = [40, 100, 60];
+        var green = [75, 100, 40];
+        var blue = [196, 77, 55];
+        
+        var theWord = "Contact Me";
+        letterColors = [red, orange, green, blue];
+        if (15 > 5) {
+          bubbleShape = "circle";
+        } else
+        {
+          bubbleShape = "square";
+        }
+        
+        
+        drawName(theWord, letterColors, bubbleShape);
+        bounceBubbles();
+            </script>
   </body>
 </html>
